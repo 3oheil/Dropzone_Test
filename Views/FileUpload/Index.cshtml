@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "آپلود فایل";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" />
+
+<style>
+    body {
+        font-family: 'Vazirmatn', sans-serif;
+        background: linear-gradient(to left, #f8fafc, #e0f2fe);
+        padding: 50px;
+        text-align: center;
+    }
+
+    .dropzone {
+        border: 2px dashed #2563eb;
+        border-radius: 12px;
+        background-color: #eff6ff;
+        padding: 2rem;
+        max-width: 600px;
+        margin: auto;
+        transition: background 0.3s ease;
+    }
+
+        .dropzone:hover {
+            background-color: #dbeafe;
+        }
+
+    h2 {
+        margin-bottom: 1.5rem;
+        color: #1e3a8a;
+    }
+</style>
+
+<h2>📁 آپلود فایل با Dropzone در MVC</h2>
+
+<form action="/FileUpload/Upload" class="dropzone" id="my-dropzone" enctype="multipart/form-data"></form>
+
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+<script>
+    Dropzone.options.myDropzone = {
+        maxFilesize: 2, // MB
+        acceptedFiles: ".jpg,.png,.pdf",
+        dictDefaultMessage: "فایل را اینجا بکش یا کلیک کن",
+        dictFileTooBig: "فایل خیلی بزرگه، حداکثر ۲ مگ مجازه!",
+        dictInvalidFileType: "فقط عکس یا PDF مجازه.",
+    };
+</script>
