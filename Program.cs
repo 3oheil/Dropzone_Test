@@ -28,7 +28,7 @@ namespace Dropzone_Test
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=FileUpload}/{action=Index}/{id?}");
 
             app.Run();
         }
